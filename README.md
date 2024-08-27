@@ -33,8 +33,6 @@ The presentation includes a list of valuable resources for further learning abou
 - Rebin Muhammad
 - Pallavi Bhale
 
-## License
-[Specify your chosen license here, e.g., MIT, GPL, etc.]
 
 ## Acknowledgments
 Special thanks to Montgomery College for supporting this educational initiative.
