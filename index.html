@@ -92,16 +92,16 @@
         <div class="slides">
             <section>
                 <div style="padding: 50px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
-                    <h1 style="color: #2c3e50; font-size: 3em; margin-bottom: 30px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);">Markdown Tutorial</h1>
+                    <h1 style="color: #2c3e50; font-size: 2em; margin-bottom: 30px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);">Markdown Tutorial</h1>
                     
                     
                     
-                    <p style="font-size: 1.2em; font-weight: 600; color: #34495e; margin-bottom: 10px; font-family: 'Helvetica Neue', Arial, sans-serif;">Rebin Muhammad & Pallavi Bhale</p>
-                    <p style="font-size: 1em; color: #7f8c8d; margin-bottom: 5px; font-family: 'Helvetica Neue', Arial, sans-serif;">Department of Mathematics</p>
-                    <p style="font-size: 1em; color: #7f8c8d; font-family: 'Helvetica Neue', Arial, sans-serif;">Montgomery College</p>
+                    <p style="font-size: 0.8em; font-weight: 600; color: #34495e; margin-bottom: 10px; font-family: 'Helvetica Neue', Arial, sans-serif;">Rebin Muhammad & Pallavi Bhale</p>
+                    <p style="font-size: .6em; color: #7f8c8d; margin-bottom: 5px; font-family: 'Helvetica Neue', Arial, sans-serif;">Department of Math, Statistics, and Data Science 
+                        </p>
+                    <p style="font-size: 0.6em; color: #7f8c8d; font-family: 'Helvetica Neue', Arial, sans-serif;">Montgomery College</p>
                 </div>
             </section>
-            
             
             
             
@@ -117,7 +117,7 @@
             </section>
 
             <section>
-                <h2>Why Markdown?</h2>
+                <h2 >Why Markdown?</h2>
                 <ul class="fragment fade-up">
                     <li class="fragment fade-right">
                         Markdown's versatility makes it a valuable tool in educational settings, both for students and faculty.
@@ -129,30 +129,38 @@
             </section>
 
             <section> 
-                <h2>Basic Markdown Syntax</h2>
-                
-                <div class="three-columns">
-                    <div class="column">
-                        <ul class="fragment fade-up">
-                            <li class="fragment fade-right">Headers (6 levels)</li>
-                            <li class="fragment fade-right">Emphasis (Bold and Italic)</li>
-                            <li class="fragment fade-right">Lists</li>
-                        </ul>
+                <section>
+                    <h2 class="r-fit-text">Basic Markdown Syntax</h2>
+                </section>
+
+                <section>
+                    <h3>Key Elements</h3>
+                    <div class="three-columns">
+                        <div class="column">
+                            <ul class="fragment fade-up">
+                                <li class="fragment fade-right">Headers (6 levels)</li>
+                                <li class="fragment fade-right">Emphasis (Bold and Italic)</li>
+                                <li class="fragment fade-right">Lists (Ordered and Unordered)</li>
+                                <li class="fragment fade-right">Links</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul class="fragment fade-up">
+                                <li class="fragment fade-right">Images</li>
+                                <li class="fragment fade-right">Code blocks</li>
+                                <li class="fragment fade-right">Blockquotes</li>
+                                <li class="fragment fade-right">Horizontal Rules</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul class="fragment fade-up">
+                                <li class="fragment fade-right">Checklists</li>
+                                <li class="fragment fade-right">Footnotes</li>
+                                <li class="fragment fade-right">Tables</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="column">
-                        <ul class="fragment fade-up">
-                            <li class="fragment fade-right">Links</li>
-                            <li class="fragment fade-right">Images</li>
-                            <li class="fragment fade-right">Code blocks</li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <ul class="fragment fade-up">
-                            <li class="fragment fade-right">Blockquotes</li>
-                            <li class="fragment fade-right">Horizontal Rules</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
             </section>
 
             <section>
@@ -392,7 +400,49 @@ Text below the line</code></pre>
 ___</code></pre>
                     <p>All of these will render as horizontal lines in most Markdown processors.</p>
                 </section>
+
+    </section>
+
+    <section>
+        <section><h2>Footnotes in Markdown</h2></section>
+        
+        <section>
+            <div class="two-columns">
+                <div class="column">
+                    <p>Linear algebra is key in data science applications.<sup id="fn1">[1]</sup></p>
+                    <p id="footnote1" style="font-size: smaller; color: gray;"><sup>[1]</sup> Muhammad & Saidi (2024), Scatterplot, 1(1).</p>
+                </div>
+                <div class="column">
+                    <pre><code class="language-markdown">
+                Linear algebra is key in data science applications.
+                [^1]</sup> Muhammad & Saidi (2024), Scatterplot, 1(1).</code></pre>
+                </div>
+            </div>
+        </section>
+        </section>
+        <section>
+            <section><h2>Checklists</h2></section>
+            
+            <section>
+                <div class="two-columns">
+                    <div class="column">
+                        <ul>
+                            <li>[ ] Unchecked item</li>
+                            <li>[x] Checked item</li>
+                            <li>[ ] Another unchecked item</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <pre><code class="language-markdown">
+                        - [ ] Unchecked item
+                        - [x] Checked item
+                        - [ ] Another unchecked item</code></pre>
+                    </div>
+                </div>
             </section>
+        </section>
+
+
 
             <section>
                 <section>
