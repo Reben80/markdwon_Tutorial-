@@ -48,6 +48,24 @@
             background-color: transparent !important;
             color: #cccccc !important;
         }
+        
+        .reveal h2.r-fit-text {
+            font-weight: bold;
+            color: #4a4a4a;
+            margin-bottom: 0.5em;
+        }
+        
+        .reveal ul.fragment {
+            list-style-type: none;
+        }
+        
+        .reveal ul.fragment li {
+            margin-bottom: 0.5em;
+            padding: 0.5em;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -77,8 +95,44 @@
             </section>
 
             <section>
+                <h2 class="r-fit-text">Why Markdown is valuable?</h2>
+                <ul class="fragment fade-up">
+                    <li class="fragment fade-right">
+                        Markdown's versatility makes it a valuable tool in educational settings, both for students and faculty.
+                    </li>
+                    <li class="fragment fade-right">
+                        Whether you're creating course materials, documenting a project, or organizing study notes, building a website, Markdown provides a simple, efficient way to format and share content.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="r-fit-text">Basic Markdown Syntax</h2>
+                <p class="fragment fade-up">Let's explore the fundamental elements of Markdown:</p>
+                <div class="two-columns">
+                    <div class="column">
+                        <ul class="fragment fade-up">
+                            <li class="fragment fade-right">Headers (6 levels)</li>
+                            <li class="fragment fade-right">Emphasis (Bold and Italic)</li>
+                            <li class="fragment fade-right">Lists</li>
+                            <li class="fragment fade-right">Links</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul class="fragment fade-up">
+                            <li class="fragment fade-right">Images</li>
+                            <li class="fragment fade-right">Code blocks</li>
+                            <li class="fragment fade-right">Blockquotes</li>
+                            <li class="fragment fade-right">Horizontal Rules</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
                 <section>
                     <h2>Headers</h2>
+                    <p>Markdown supports 6 levels of headers</p>
                 </section>
                 <section>
                     <div class="two-columns">
@@ -86,11 +140,17 @@
                             <h1>Header 1</h1>
                             <h2>Header 2</h2>
                             <h3>Header 3</h3>
+                            <h4>Header 4</h4>
+                            <h5>Header 5</h5>
+                            <h6>Header 6</h6>
                         </div>
                         <div class="column">
                             <pre><code class="language-markdown"># Header 1
 ## Header 2
-### Header 3</code></pre>
+### Header 3
+#### Header 4
+##### Header 5
+###### Header 6</code></pre>
                         </div>
                     </div>
                 </section>
@@ -105,12 +165,12 @@
                         <div class="column">
                             <p><strong>Bold text</strong></p>
                             <p><em>Italic text</em></p>
-                            <p><strong><em>Bold and italic</em></strong></p>
+                            <p><strong><em>Bold and italic text</em></strong></p>
                         </div>
                         <div class="column">
                             <pre><code class="language-markdown">**Bold text**
 *Italic text*
-***Bold and italic***</code></pre>
+***Bold and italic text***</code></pre>
                         </div>
                     </div>
                 </section>
@@ -120,24 +180,64 @@
                 <section>
                     <h2>Lists</h2>
                 </section>
+                
                 <section>
+                    <h3>Unordered Lists</h3>
                     <div class="two-columns">
                         <div class="column">
                             <ul>
-                                <li>Unordered item 1</li>
-                                <li>Unordered item 2</li>
+                                <li>First item</li>
+                                <li>Second item</li>
+                                <li>Third item</li>
                             </ul>
+                        </div>
+                        <div class="column">
+                            <pre><code class="language-markdown">- First item
+- Second item
+- Third item</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Ordered Lists</h3>
+                    <div class="two-columns">
+                        <div class="column">
                             <ol>
-                                <li>Ordered item 1</li>
-                                <li>Ordered item 2</li>
+                                <li>First item</li>
+                                <li>Second item</li>
+                                <li>Third item</li>
                             </ol>
                         </div>
                         <div class="column">
-                            <pre><code class="language-markdown">- Unordered item 1
-- Unordered item 2
+                            <pre><code class="language-markdown">1. First item
+2. Second item
+3. Third item</code></pre>
+                        </div>
+                    </div>
+                </section>
 
-1. Ordered item 1
-2. Ordered item 2</code></pre>
+                <section>
+                    <h3>Nested Lists</h3>
+                    <div class="two-columns">
+                        <div class="column">
+                            <ul>
+                                <li>First item</li>
+                                <li>Second item
+                                    <ul>
+                                        <li>Nested item 1</li>
+                                        <li>Nested item 2</li>
+                                    </ul>
+                                </li>
+                                <li>Third item</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <pre><code class="language-markdown">- First item
+- Second item
+  - Nested item 1
+  - Nested item 2
+- Third item</code></pre>
                         </div>
                     </div>
                 </section>
@@ -147,21 +247,33 @@
                 <section>
                     <h2>Links</h2>
                 </section>
-                <section>
-                    <h3>Image with Link</h3>
-                    <div class="two-columns">
-                        <div class="column">
-                            <a href="https://www.montgomerycollege.edu">
-                                <img src="https://www.mcinfonet.org/crtvsvc/creativeservices_website/mclogos_page/assets/MClogo_left_aligned_purple_gray_RGB_white_background.png" alt="Montgomery College Logo" style="max-width: 100%;">
-                            </a>
-                            <p>Click the image to visit Montgomery College</p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">[![Montgomery College Logo](https://www.mcinfonet.org/crtvsvc/creativeservices_website/mclogos_page/assets/MClogo_left_aligned_purple_gray_RGB_white_background.png)](https://www.montgomerycollege.edu)
 
-Click the image to visit Montgomery College</code></pre>
-                        </div>
-                    </div>
+                <section>
+                    <h3>Basic Links</h3>
+                    <p><a href="https://www.montgomerycollege.edu">Montgomery College Website</a></p>
+                    <pre><code class="language-markdown">[Montgomery College Website](https://www.montgomerycollege.edu)</code></pre>
+                </section>
+
+                <section>
+                    <h3>Links with Titles</h3>
+                    <p><a href="https://www.montgomerycollege.edu" title="Visit Montgomery College">MC Website (hover me)</a></p>
+                    <pre><code class="language-markdown">[MC Website (hover me)](https://www.montgomerycollege.edu "Visit Montgomery College")</code></pre>
+                </section>
+
+                <section>
+                    <h3>Reference-style Links</h3>
+                    <p><a href="https://www.montgomerycollege.edu">Montgomery College</a> is a great institution.</p>
+                    <pre><code class="language-markdown">[Montgomery College][mc-link] is a great institution.
+
+[mc-link]: https://www.montgomerycollege.edu</code></pre>
+                </section>
+
+                <section>
+                    <h3>Images as Links</h3>
+                    <a href="https://www.montgomerycollege.edu">
+                        <img src="MClogo.png" alt="Montgomery College Logo" style="max-width: 300px; border: 2px solid #ccc; border-radius: 5px;">
+                    </a>
+                    <pre><code class="language-markdown">[![Montgomery College Logo](MClogo.png)](https://www.montgomerycollege.edu)</code></pre>
                 </section>
             </section>
 
@@ -169,45 +281,59 @@ Click the image to visit Montgomery College</code></pre>
                 <section>
                     <h2>Code Blocks</h2>
                 </section>
+            
                 <section>
-                    <h3>Python Code Example: Hello, World!</h3>
-                    <div class="two-columns">
-                        <div class="column">
-                            <pre><code class="language-python">def greet(name):
+                    <h3>Inline Code</h3>
+                    <p>Use the <code>print()</code> function to output text in Python.</p>
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">Use the `print()` function to output text in Python.</code></pre>
+                </section>
+            
+                <section>
+                    <h3>Fenced Code Blocks</h3>
+                    <pre><code class="language-python">def greet(name):
     return f"Hello, {name}!"
 
 print(greet("World"))</code></pre>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">```python
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">```python
 def greet(name):
     return f"Hello, {name}!"
 
 print(greet("World"))
 ```</code></pre>
-                        </div>
-                    </div>
                 </section>
-            </section>
+            
+                <section>
+                    <h3>Syntax Highlighting</h3>
+                    <pre><code class="language-javascript">function calculateArea(radius) {
+    return Math.PI * radius * radius;
+}
 
-            <section>
-                <section>
-                    <h2>Blockquotes</h2>
+console.log(calculateArea(5));</code></pre>
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">```javascript
+function calculateArea(radius) {
+    return Math.PI * radius * radius;
+}
+
+console.log(calculateArea(5));
+```</code></pre>
                 </section>
+            
                 <section>
-                    <div class="two-columns">
-                        <div class="column">
-                            <blockquote>
-                                <p>Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate, only love can do that.</p>
-                                <footer>— Martin Luther King Jr.</footer>
-                            </blockquote>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">> Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate, only love can do that.
->
-> — Martin Luther King Jr.</code></pre>
-                        </div>
-                    </div>
+                    <h3>Indented Code Blocks</h3>
+                    <pre><code>    This is an indented code block.
+    It uses four spaces at the beginning of each line.
+    No language specification is needed.</code></pre>
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">    This is an indented code block.
+    It uses four spaces at the beginning of each line.
+    No language specification is needed.</code></pre>
                 </section>
             </section>
 
@@ -215,31 +341,30 @@ print(greet("World"))
                 <section>
                     <h2>Horizontal Lines</h2>
                 </section>
+
                 <section>
-                    <div class="two-columns">
-                        <div class="column">
-                            <p>Text above the line</p>
-                            <hr>
-                            <p>Text below the line</p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">Text above the line
+                    <h3>Basic Horizontal Line</h3>
+                    <p>Text above the line</p>
+                    <hr>
+                    <p>Text below the line</p>
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">Text above the line
 
 ---
 
 Text below the line</code></pre>
-                        </div>
-                    </div>
-                    <div class="two-columns">
-                        <div class="column">
-                            <p>Alternative syntax:</p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">***
+                </section>
+
+                <section>
+                    <h3>Alternative Syntax</h3>
+                    <p>Markdown offers multiple ways to create horizontal lines:</p>
+                    <pre><code class="language-markdown">---
+
+***
 
 ___</code></pre>
-                        </div>
-                    </div>
+                    <p>All of these will render as horizontal lines in most Markdown processors.</p>
                 </section>
             </section>
 
@@ -247,7 +372,9 @@ ___</code></pre>
                 <section>
                     <h2>Tables</h2>
                 </section>
+
                 <section>
+                    <h3>Basic Table</h3>
                     <div class="two-columns">
                         <div class="column">
                             <table>
@@ -270,6 +397,7 @@ ___</code></pre>
                             </table>
                         </div>
                         <div class="column">
+                            <h4>Markdown Syntax:</h4>
                             <pre><code class="language-markdown">| Header 1 | Header 2 |
 |----------|----------|
 | Row 1, Col 1 | Row 1, Col 2 |
@@ -277,23 +405,72 @@ ___</code></pre>
                         </div>
                     </div>
                 </section>
-            </section>
 
-            <section>
                 <section>
-                    <h2>Task Lists</h2>
-                </section>
-                <section>
+                    <h3>Aligned Table</h3>
                     <div class="two-columns">
                         <div class="column">
-                            <ul>
-                                <li><input type="checkbox" disabled> Unchecked item</li>
-                                <li><input type="checkbox" disabled checked> Checked item</li>
-                            </ul>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">Left</th>
+                                        <th style="text-align: center;">Center</th>
+                                        <th style="text-align: right;">Right</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: left;">L1</td>
+                                        <td style="text-align: center;">C1</td>
+                                        <td style="text-align: right;">R1</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;">L2</td>
+                                        <td style="text-align: center;">C2</td>
+                                        <td style="text-align: right;">R2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="column">
-                            <pre><code class="language-markdown">- [ ] Unchecked item
-- [x] Checked item</code></pre>
+                            <h4>Markdown Syntax:</h4>
+                            <pre><code class="language-markdown">| Left | Center | Right |
+|:-----|:------:|------:|
+| L1   |   C1   |    R1 |
+| L2   |   C2   |    R2 |</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Table with Formatting</h3>
+                    <div class="two-columns">
+                        <div class="column">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Bold</strong></td>
+                                        <td>Makes text <strong>bold</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><em>Italic</em></td>
+                                        <td>Makes text <em>italic</em></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="column">
+                            <h4>Markdown Syntax:</h4>
+                            <pre><code class="language-markdown">| Name | Description |
+|------|-------------|
+| **Bold** | Makes text **bold** |
+| *Italic* | Makes text *italic* |</code></pre>
                         </div>
                     </div>
                 </section>
@@ -301,167 +478,61 @@ ___</code></pre>
 
             <section>
                 <section>
-                    <h2>Strikethrough Text</h2>
-                </section>
-                <section>
-                    <div class="two-columns">
-                        <div class="column">
-                            <p>This is <del>strikethrough</del> text.</p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">This is ~~strikethrough~~ text.</code></pre>
-                        </div>
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Footnotes</h2>
-                </section>
-                <section>
-                    <div class="two-columns">
-                        <div class="column">
-                            <p>Here's a sentence with a footnote.<sup>1</sup></p>
-                            <hr>
-                            <p><small>1. This is the footnote.</small></p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">Here's a sentence with a footnote.[^1]
-
-[^1]: This is the footnote.</code></pre>
-                        </div>
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Images</h2>
+                    <h2>Blockquotes</h2>
                 </section>
 
                 <section>
-                    <h3>Images from Link</h3>
-                    <div class="two-columns">
-                        <div class="column">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Maryland.svg" alt="Flag of Maryland" style="max-width: 100%;">
-                            <p>The flag of Maryland</p>
-                        </div>
-                        <div class="column">
-                            <pre style="background-color: purple; color: white;"><code class="language-markdown">[![Flag of Maryland](https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Maryland.svg)](https://en.wikipedia.org/wiki/Flag_of_Maryland)
-
-The flag of Maryland</code></pre>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3>Local Images</h3>
-                    <div class="two-columns">
-                        <div class="column">
-                            <img src="MClogo.png" alt="Montgomery College Logo" style="max-width: 100%;">
-                            <p>Montgomery College Logo</p>
-                        </div>
-                        <div class="column">
-                            <pre style="background-color: purple; color: white;"><code class="language-markdown">![Montgomery College Logo](MClogo.png)
-
-Montgomery College Logo</code></pre>
-                        </div>
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Text Formatting</h2>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Blockquotes</h2>
-                    </section>
-                    <section>
-                        <div class="two-columns">
-                            <div class="column">
-                                <blockquote>
-                                    <p>Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate, only love can do that.</p>
-                                    <footer>— Martin Luther King Jr.</footer>
-                                </blockquote>
-                            </div>
-                            <div class="column">
-                                <pre style="background-color: purple; color: white;"><code class="language-markdown">> Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate, only love can do that.
+                    <h3>Simple Blockquote</h3>
+                    <blockquote>
+                        <p>Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate, only love can do that.</p>
+                        <footer>— Martin Luther King Jr.</footer>
+                    </blockquote>
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">> Darkness cannot drive out darkness, only light can do that. Hate cannot drive out hate, only love can do that.
 >
 > — Martin Luther King Jr.</code></pre>
-                            </div>
-                        </div>
-                    </section>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Lists and Numbering</h2>
-                    </section>
+                    <h3>Nested Blockquotes</h3>
+                    <blockquote>
+                        <p>The best way to predict the future is to create it.</p>
+                        <blockquote>
+                            <p>It's hard to make predictions, especially about the future.</p>
+                            <footer>— Yogi Berra</footer>
+                        </blockquote>
+                        <footer>— Peter Drucker</footer>
+                    </blockquote>
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">> The best way to predict the future is to create it.
+>
+>> It's hard to make predictions, especially about the future.
+>>
+>> — Yogi Berra
+>
+> — Peter Drucker</code></pre>
+                </section>
 
-                    <section>
-                        <h3>Bullet Lists</h3>
-                        <div class="two-columns">
-                            <div class="column">
-                                <ul>
-                                    <li>First item</li>
-                                    <li>Second item</li>
-                                    <li>Third item</li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <pre style="background-color: purple; color: white;"><code class="language-markdown">- First item
-- Second item
-- Third item</code></pre>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section>
-                        <h3>Numbered Lists</h3>
-                        <div class="two-columns">
-                            <div class="column">
-                                <ol>
-                                    <li>First item</li>
-                                    <li>Second item</li>
-                                    <li>Third item</li>
-                                </ol>
-                            </div>
-                            <div class="column">
-                                <pre style="background-color: purple; color: white;"><code class="language-markdown">1. First item
-2. Second item
-3. Third item</code></pre>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section>
-                        <h3>Nested Lists</h3>
-                        <div class="two-columns">
-                            <div class="column">
-                                <ul>
-                                    <li>First item</li>
-                                    <li>Second item
-                                        <ul>
-                                            <li>Nested item 1</li>
-                                            <li>Nested item 2</li>
-                                        </ul>
-                                    </li>
-                                    <li>Third item</li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <pre style="background-color: purple; color: white;"><code class="language-markdown">- First item
-- Second item
-  - Nested item 1
-  - Nested item 2
-- Third item</code></pre>
-                            </div>
-                        </div>
-                    </section>
+                <section>
+                    <h3>Blockquotes with Other Elements</h3>
+                    <blockquote>
+                        <h4>The quarterly results look great!</h4>
+                        <ul>
+                            <li>Revenue was off the chart.</li>
+                            <li>Profits were higher than ever.</li>
+                        </ul>
+                        <p><em>Everything</em> is going according to <strong>plan</strong>.</p>
+                    </blockquote>
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">> #### The quarterly results look great!
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+> *Everything* is going according to **plan**.</code></pre>
                 </section>
             </section>
 
@@ -472,14 +543,10 @@ Montgomery College Logo</code></pre>
 
                 <section>
                     <h3>Inline Math</h3>
-                    <div class="two-columns">
-                        <div class="column">
-                            <p>The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</code></pre>
-                        </div>
-                    </div>
+                    <p>The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</p>
+                    <br>
+                    <h4>Markdown Syntax:</h4>
+                    <pre><code class="language-markdown">The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$</code></pre>
                 </section>
 
                 <section>
@@ -490,65 +557,10 @@ Montgomery College Logo</code></pre>
                             $$a^2 + b^2 = c^2$$
                         </div>
                         <div class="column">
+                            <h4>Markdown Syntax:</h4>
                             <pre><code class="language-markdown">The Pythagorean theorem:
 
 $$a^2 + b^2 = c^2$$</code></pre>
-                        </div>
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Bold Text</h2>
-                </section>
-                <section>
-                    <div class="two-columns">
-                        <div class="column">
-                            <p>This is <strong>bold text</strong> in a sentence.</p>
-                            <p>This is also <strong>bold text</strong> using a different syntax.</p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">This is **bold text** in a sentence.
-
-This is also __bold text__ using a different syntax.</code></pre>
-                        </div>
-                    </div>
-                </section>
-            </section>
-
-            <section>
-                <section>
-                    <h2>Text Emphasis</h2>
-                </section>
-                <section>
-                    <h3>Bold and Italic Text</h3>
-                    <div class="two-columns">
-                        <div class="column">
-                            <p>This is <strong>bold text</strong> in a sentence.</p>
-                            <p>This is <em>italic text</em> in a sentence.</p>
-                            <p>This is <strong><em>bold and italic</em></strong> text.</p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">This is **bold text** in a sentence.
-
-This is *italic text* in a sentence.
-
-This is ***bold and italic*** text.</code></pre>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3>Alternative Syntax</h3>
-                    <div class="two-columns">
-                        <div class="column">
-                            <p>This is also <strong>bold text</strong>.</p>
-                            <p>This is also <em>italic text</em>.</p>
-                        </div>
-                        <div class="column">
-                            <pre><code class="language-markdown">This is also __bold text__.
-
-This is also _italic text_.</code></pre>
                         </div>
                     </div>
                 </section>
@@ -628,29 +640,59 @@ in all Markdown processors*</code></pre>
                         </div>
                     </div>
                 </section>
+
+                <section>
+                    <h3>Limited Layout Control</h3>
+                    <ul>
+                        <li>No built-in way to create multi-column layouts</li>
+                        <li>Limited control over image sizing and positioning</li>
+                        <li>No native support for page breaks or complex formatting</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Lack of Standardization</h3>
+                    <ul>
+                        <li>Different Markdown flavors may have slightly different syntax</li>
+                        <li>Some advanced features may not be universally supported</li>
+                        <li>Rendering can vary between different Markdown processors</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Limited Support for Complex Tables</h3>
+                    <ul>
+                        <li>No native support for merged cells or complex table layouts</li>
+                        <li>Limited options for table styling</li>
+                        <li>Large tables can become unwieldy in raw Markdown</li>
+                    </ul>
+                </section>
             </section>
 
             <section>
                 <section>
-                    <h2>Resources for Learning Markdown</h2>
+                    <h2>Resources for Learning More</h2>
                 </section>
+
                 <section>
                     <h3>Comprehensive Guides</h3>
                     <ul>
-                        <li><a href="https://www.markdownguide.org/">Markdown Guide</a>: A comprehensive and easy-to-follow guide covering basic to advanced features.</li>
-                        <li><a href="https://daringfireball.net/projects/markdown/">Daring Fireball's Markdown</a>: The original documentation by John Gruber, co-creator of Markdown.</li>
+                        <li><a href="https://www.markdownguide.org/">Markdown Guide</a>: A comprehensive and easy-to-follow guide covering basic to advanced features. Perfect for both beginners and experienced users.</li>
+                        <li><a href="https://daringfireball.net/projects/markdown/">Daring Fireball's Markdown</a>: The original Markdown documentation created by John Gruber, the co-creator of Markdown. This resource provides a deep dive into the philosophy and detailed syntax of Markdown.</li>
                     </ul>
                 </section>
+
                 <section>
                     <h3>Interactive Learning</h3>
                     <ul>
-                        <li><a href="http://eherrera.net/markdowntutorial/tutorial/index.html">Markdown Tutorial</a>: An interactive tutorial with hands-on examples for practicing Markdown.</li>
+                        <li><a href="http://eherrera.net/markdowntutorial/tutorial/index.html">Markdown Tutorial</a>: An interactive tutorial that walks you through the basics of Markdown with hands-on examples. A great way to practice and solidify your Markdown skills.</li>
                     </ul>
                 </section>
+
                 <section>
                     <h3>Useful Tools</h3>
                     <ul>
-                        <li><a href="https://www.tablesgenerator.com/markdown_tables">Markdown Tables Generator</a>: A tool for creating complex tables in Markdown easily.</li>
+                        <li><a href="https://www.tablesgenerator.com/markdown_tables">Markdown Tables Generator</a>: A handy tool for creating complex tables in Markdown. Simply design your table in the web interface, and it generates the Markdown code for you.</li>
                     </ul>
                 </section>
             </section>
