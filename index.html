@@ -34,14 +34,13 @@
             overflow: hidden;
         }
     
-        .two-columns {
+        .three-columns {
             display: flex;
             justify-content: space-between;
-            gap: 2%;
         }
     
-        .column {
-            flex: 0 0 48%;
+        .three-columns .column {
+            flex: 1;
         }
     
         .column pre {
@@ -63,31 +62,27 @@
         }
     
         .reveal h2.r-fit-text {
-            font-weight: 700;
-            color: #2e3440;
-            margin-bottom: 0.6em;
-        }
-    
-        .reveal ul.fragment {
-            list-style-type: none;
-            padding-left: 0;
-        }
-    
-        .reveal ul.fragment li {
-            margin-bottom: 0.6em;
-            padding: 0.6em;
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            transition: transform 0.2s ease;
-        }
-    
-        .reveal ul.fragment li:hover {
-            transform: translateY(-3px);
-        }
-    
-        .reveal .r-fit-text {
             line-height: 1.2;
+        }
+
+        .reveal h2.highlight-heading {
+            color: #ffffff;
+            background-color: #2c3e50;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .reveal h2.basic-markdown-heading {
+            color: #2c3e50;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-weight: 700;
+            margin-bottom: 0.5em;
         }
     </style>
     
@@ -96,21 +91,16 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div style="padding: 50px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); text-align: center;">
-                    <h1 style="color: #2c3e50; font-size: 2em; margin-bottom: 30px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);">
-                        Markdown Tutorial
-                    </h1>
+                <div style="padding: 50px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                    <h1 style="color: #2c3e50; font-size: 3em; margin-bottom: 30px; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);">Markdown Tutorial</h1>
                     
                     
-                    <p style="font-size: 0.8em; font-weight: 600; color: #34495e; margin-bottom: 10px; font-family: 'Helvetica Neue', Arial, sans-serif;">
-                        Rebin Muhammad & Pallavi Bhale
-                    </p>
-                    <p style="font-size: 0.6em; color: #7f8c8d; margin-bottom: 5px; font-family: 'Helvetica Neue', Arial, sans-serif;">
-                        Department of Math, Statistics, and Data Science
-                    </p>
-                    <p style="font-size: 0.6em; color: #7f8c8d; font-family: 'Helvetica Neue', Arial, sans-serif;">
-                        Montgomery College
-                    </p>
+                    
+                    <img src="https://www.mcinfonet.org/crtvsvc/creativeservices_website/mclogos_page/assets/MClogo_left_aligned_purple_gray_RGB_white_background.png" alt="Montgomery College Logo" style="max-width: 350px; margin-bottom: 40px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+                    
+                    <p style="font-size: 1.2em; font-weight: 600; color: #34495e; margin-bottom: 10px; font-family: 'Helvetica Neue', Arial, sans-serif;">Rebin Muhammad & Pallavi Bhale</p>
+                    <p style="font-size: 1em; color: #7f8c8d; margin-bottom: 5px; font-family: 'Helvetica Neue', Arial, sans-serif;">Department of Mathematics</p>
+                    <p style="font-size: 1em; color: #7f8c8d; font-family: 'Helvetica Neue', Arial, sans-serif;">Montgomery College</p>
                 </div>
             </section>
             
@@ -129,7 +119,7 @@
             </section>
 
             <section>
-                <h2 class="r-fit-text">Why Markdown is valuable?</h2>
+                <h2 class="highlight-heading">Why Markdown?</h2>
                 <ul class="fragment fade-up">
                     <li class="fragment fade-right">
                         Markdown's versatility makes it a valuable tool in educational settings, both for students and faculty.
@@ -141,21 +131,25 @@
             </section>
 
             <section>
-                <h2 class="r-fit-text">Basic Markdown Syntax</h2>
-                <p class="fragment fade-up">Let's explore the fundamental elements of Markdown:</p>
-                <div class="two-columns">
+                <h2 class="basic-markdown-heading">Basic Markdown Syntax</h2>
+                
+                <div class="three-columns">
                     <div class="column">
                         <ul class="fragment fade-up">
                             <li class="fragment fade-right">Headers (6 levels)</li>
                             <li class="fragment fade-right">Emphasis (Bold and Italic)</li>
                             <li class="fragment fade-right">Lists</li>
-                            <li class="fragment fade-right">Links</li>
                         </ul>
                     </div>
                     <div class="column">
                         <ul class="fragment fade-up">
+                            <li class="fragment fade-right">Links</li>
                             <li class="fragment fade-right">Images</li>
                             <li class="fragment fade-right">Code blocks</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul class="fragment fade-up">
                             <li class="fragment fade-right">Blockquotes</li>
                             <li class="fragment fade-right">Horizontal Rules</li>
                         </ul>
